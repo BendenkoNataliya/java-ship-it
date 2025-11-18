@@ -1,0 +1,42 @@
+package ru.yandex.practicum;
+
+import org.junit.jupiter.api.BeforeEach;
+import ru.yandex.practicum.delivery.ParcelBox;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import ru.yandex.practicum.delivery.StandardParcel;
+
+import java.util.ArrayList;
+
+public class ParcelBoxTest {
+
+    private static final ArrayList<StandardParcel> standardParcels = new ArrayList<>();
+    private static final ParcelBox<StandardParcel> boxWithStandard = new ParcelBox<>(
+            25, standardParcels);
+
+    @BeforeEach
+    public void clearListParcel() {
+        standardParcels.clear();
+    }
+
+    @Test
+    public void shouldBeFalseWhenParcelWeight15() {
+        boxWithStandard.addParcel(new StandardParcel("Books",
+                15, "Moscow, Lenina 40-155", 15));
+        Assertions.assertFalse(standardParcels.isEmpty());
+    }
+
+    @Test
+    public void shouldBeFalseWhenParcelWeight25() {
+        boxWithStandard.addParcel(new StandardParcel("Books",
+                25, "Moscow, Lenina 40-155", 15));
+        Assertions.assertFalse(standardParcels.isEmpty());
+    }
+
+    @Test
+    public void shouldBeTrueWhenParcelWeight35() {
+        boxWithStandard.addParcel(new StandardParcel("Books",
+                35, "Moscow, Lenina 40-155", 15));
+        Assertions.assertTrue(standardParcels.isEmpty());
+    }
+}
