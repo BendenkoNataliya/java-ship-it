@@ -56,8 +56,6 @@ public class DeliveryApp {
         System.out.println("0 — Завершить");
     }
 
-    // реализуйте методы ниже
-
     private static void addParcel() {
         System.out.println("Укажите тип Вашей посылки: 1 - стандартная," +
                 "2 - хрупкая, 3 - скоропортящаяся");
@@ -106,7 +104,6 @@ public class DeliveryApp {
             p.packageItem();
             p.deliver();
         }
-        // Пройти по allParcels, вызвать packageItem() и deliver()
     }
 
     private static void calculateCosts() {
@@ -116,7 +113,6 @@ public class DeliveryApp {
         }
         System.out.println("Общая стоимость доставки всех посылок составила: "
                 + cost + ".");
-        // Посчитать общую стоимость всех доставок и вывести на экран
     }
 
     private static void trackShipment() {

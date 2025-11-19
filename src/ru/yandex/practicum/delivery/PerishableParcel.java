@@ -1,7 +1,7 @@
 package ru.yandex.practicum.delivery;
 
 public class PerishableParcel extends Parcel {
-    int timeToLive;
+    private final int timeToLive;
 
     public PerishableParcel(String description, int weight,
                             String deliveryAddress, int sendDay,

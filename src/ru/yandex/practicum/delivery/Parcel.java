@@ -3,12 +3,10 @@ package ru.yandex.practicum.delivery;
 import java.util.Objects;
 
 public abstract class Parcel {
-    String description;
-    int weight;
-    String deliveryAddress;
-    int sendDay;
-    private static int unitPrice;
-
+    protected String description;
+    protected int weight;
+    protected String deliveryAddress;
+    protected int sendDay;
 
     public Parcel(String description, int weight,
                   String deliveryAddress, int sendDay) {
@@ -28,7 +26,6 @@ public abstract class Parcel {
         System.out.println("Посылка " + description
                 + " доставлена по адресу " + deliveryAddress);
     }
-
 
     @Override
     public boolean equals(Object o) {
